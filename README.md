@@ -1,27 +1,20 @@
-[comment]: <> ( dalawomen)
+ dalawomen
 
-[comment]: <> (Build Setup)
+Build Setup
 
-[comment]: <> (```bash)
 
-[comment]: <> (# install dependencies)
+ install dependencies
+npm install
 
-[comment]: <> ($ npm install)
+ serve with hot reload at localhost:3000
+npm run dev
 
-[comment]: <> (# serve with hot reload at localhost:3000)
+ build for production and launch server
+ npm run build
+ npm run start
 
-[comment]: <> ($ npm run dev)
+ generate static project
+ npm run generate
 
-[comment]: <> (# build for production and launch server)
-
-[comment]: <> ($ npm run build)
-
-[comment]: <> ($ npm run start)
-
-[comment]: <> (# generate static project)
-
-[comment]: <> ($ npm run generate)
-
-[comment]: <> (```)
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
