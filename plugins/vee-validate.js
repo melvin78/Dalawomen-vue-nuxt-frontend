@@ -1,4 +1,4 @@
-import { extend,ValidationProvider,ValidationObserver } from "vee-validate";
+import { extend } from "vee-validate";
 import { required, alpha,email,numeric,min } from "vee-validate/dist/rules";
 
 extend("required", {

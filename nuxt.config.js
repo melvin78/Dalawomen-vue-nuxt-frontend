@@ -51,7 +51,7 @@ export default {
     broadcaster: 'pusher',
     authModule: true,
     connectOnLogin: true,
-    authEndpoint: 'http://localhost:8086/api/broadcasting/auth',
+    authEndpoint: process.env.VUE_APP_API_URL+'/api/broadcasting/auth',
     key: process.env.PUSHER_APP_KEY,
     wsHost: process.env.VUE_APP_WEBSOCKET_SERVER,
     wsPort: 6001,
@@ -107,7 +107,7 @@ http:{
     strategies: {
       laravelSanctum: {
         provider: 'laravel/sanctum',
-        url: 'http://localhost:8086',
+        url: process.env.VUE_APP_API_URL
       },
     },
 
