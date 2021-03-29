@@ -120,7 +120,7 @@
 
 <script>
 import error from "@/layouts/error";
-import {mapGetters} from 'Vuex';
+import {mapGetters} from 'vuex';
 import {ValidationObserver} from 'vee-validate';
 import {ValidationProvider} from 'vee-validate';
 

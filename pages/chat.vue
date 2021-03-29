@@ -57,7 +57,7 @@
 
 <script>
 import {mapActions} from "vuex";
-import {mapGetters} from "Vuex";
+import {mapGetters} from "vuex";
 
 export default {
   name: "chat",

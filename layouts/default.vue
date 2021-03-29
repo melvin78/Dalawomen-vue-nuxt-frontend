@@ -258,8 +258,8 @@
 <script>
 import NotificationMenuPopup from "@/components/notification-menu-popup";
 import {mapActions} from "vuex";
-import {mapGetters} from "Vuex";
-import {mapState} from "Vuex";
+import {mapGetters} from "vuex";
+
 
 export default {
   components: {NotificationMenuPopup},

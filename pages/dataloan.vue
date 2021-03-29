@@ -203,7 +203,7 @@
 </template>
 
 <script>
-import {mapActions, mapGetters} from "Vuex";
+import {mapActions, mapGetters} from "vuex";
 import TextfieldChip from "@/components/textfield-chip";
 import SnackbarDataloan from "@/components/snackbar-dataloan";
 import SubmittedOverlay from "@/components/submitted-overlay";
