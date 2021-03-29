@@ -1,0 +1,57 @@
+diff --git a/node_modules/@nuxtjs/laravel-echo/lib/plugin.js b/node_modules/@nuxtjs/laravel-echo/lib/plugin.js
+index 20f1179..7a80bdd 100644
+--- a/node_modules/@nuxtjs/laravel-echo/lib/plugin.js
++++ b/node_modules/@nuxtjs/laravel-echo/lib/plugin.js
+@@ -1,19 +1,19 @@
+ import Echo from 'laravel-echo'
+ 
+ <% if (options.broadcaster === 'pusher') { %>
+-window.Pusher = require('pusher-js')
+-<% } else if (options.broadcaster === 'socket.io') { %>
+-window.io = require('socket.io-client')
+-<% } %>
++  window.Pusher = require('pusher-js')
++    <% } else if (options.broadcaster === 'socket.io') { %>
++  window.io = require('socket.io-client')
++    <% } %>
+ 
+ function getHeaders ({ app }) {
+   const headers = {}
+ 
+   <% if (options.authModule) { %>
+-  if (app.$auth) {
+-    const strategy = app.$auth.strategy
+-    const tokenName = strategy.options.tokenName || 'Authorization'
+-    const token = app.$auth.getToken(strategy.name)
++if (app.$auth) {
++const strategy = app.$auth.strategy
++const tokenName = strategy.options.tokenName || 'Authorization'
++    const token =app.$auth.strategy.token.get()
+ 
+     if (token) {
+       headers[tokenName] = token
+@@ -31,6 +31,24 @@ export default (ctx, inject) => {
+     ...options.auth.headers,
+     ...getHeaders(ctx)
+   }
++  <% if (options.sanctum) {%>
++options.authorizer = function(channel, options) {
++return {
++  authorize: (socketId, callback) => {
++    ctx.app.$axios.post(options.authEndpoint, {
++      socket_id: socketId,
++      channel_name: channel.name
++    })
++      .then(response => {
++        callback(false, response.data);
++      })
++      .catch(error => {
++        callback(true, error);
++      });
++  }
++};
++}
++  <% }%>
+ 
+   const echo = new Echo(options)
+ 
