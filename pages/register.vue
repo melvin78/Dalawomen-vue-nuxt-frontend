@@ -68,6 +68,7 @@
                     label="password confirmation"
                     name="password"
                     outlined
+                    type="password"
 
                   ></v-text-field>
                 </ValidationProvider>
