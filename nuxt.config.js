@@ -14,8 +14,8 @@ server:{
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - dalawomen',
-    title: 'dalawomen',
+    titleTemplate: '%s - MeloSolutions',
+    title: 'Melosolutions',
     htmlAttrs: {
       lang: 'en'
     },
