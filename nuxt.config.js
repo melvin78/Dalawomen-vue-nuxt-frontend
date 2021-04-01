@@ -58,9 +58,11 @@ server:{
     key: process.env.PUSHER_APP_KEY,
     wsHost: process.env.VUE_APP_WEBSOCKET_SERVER,
     wsPort: 6001,
-    encrypted:true,
+    wssPort: 6001,
+    enabledTransports: ['ws', 'wss'],
+    encrypted:false,
     sanctum: true,
-    forceTLS: false,
+    forceTLS: true,
     disableStats: true,
   },
 
