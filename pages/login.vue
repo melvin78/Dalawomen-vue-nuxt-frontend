@@ -10,8 +10,8 @@
         >
           <v-card elevation="13"
                   shaped>
-            <v-card-title>Fill in the form to register</v-card-title>
-            <v-card-subtitle>You will be assigned the role of a member by default. If you wish to test
+            <v-card-title>Fill in the form to login</v-card-title>
+            <v-card-subtitle>Login with your newly registered account. If you wish to test
               the admin features,login with the following credentials:<br>
               <strong>Email: Miles95@example.org</strong><br>
               <strong>Password: password</strong><br>
@@ -66,6 +66,10 @@
             </validation-observer>
 
           </v-card>
+          <div class="pt-5">
+            <div>Register from here:</div>
+            <v-btn x-large @click="registerMe"> REGISTER</v-btn>
+          </div>
         </v-col>
       </v-row>
     </div>
