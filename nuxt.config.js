@@ -60,15 +60,15 @@ server:{
     wsPort: 6001,
     wssPort: 6001,
     enabledTransports: ['ws', 'wss'],
-    encrypted:false,
+    encrypted:true,
     sanctum: true,
-    forceTLS: true,
+    forceTLS: false,
     disableStats: true,
   },
 
   axios: {
 
-    baseURL: 'https://dala.melosolutions.tech',
+    baseURL: process.env.VUE_APP_API_URL,
     credentials: true,
   },
   router: {
