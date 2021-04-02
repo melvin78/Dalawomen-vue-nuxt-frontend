@@ -1,21 +1,16 @@
 <template>
 
   <v-container class="centered">
-    <div class="child">
+
       <v-row align="center" justify="center">
         <v-col
           cols="12"
           lg="6"
           md="8"
-          sm="10"
-        >
-
-
-          <v-card elevation="13"
-                  shaped>
+          sm="10">
+          <v-card elevation="13" shaped>
             <v-card-title>Enter Your Email Address and Password To Login</v-card-title>
             <v-card-subtitle>
-              <nuxt-link to="forgotPassword"><i>Forgotten Credentials? Click Here</i></nuxt-link><br>
               If you wish to test
               the admin features,login with the following credentials:<br>
               <strong>Email</strong> Miles95@example.org<br>
@@ -65,12 +60,7 @@
 
                       @click="login"
                     >
-                      <v-icon
-                        dark
-                        right
-                      >
-                        mdi-account-circle
-                      </v-icon>
+
                       LOGIN
                     </v-btn>
 
@@ -83,43 +73,43 @@
               </form>
             </ValidationObserver>
           </v-card>
-          <div class="pt-5">
-            <v-sheet
-              elevation="1"
+<!--          <div class="pt-5">-->
+<!--            <v-sheet-->
+<!--              elevation="1"-->
 
-              rounded
-              shaped
-            >
-              Dont have an account? Click on register to create one
-              <v-btn
-                class="mr-4"
-                color="success"
-                text
-                type="submit"
-                x-large
-                @click="registerMe"
-              >
-                <v-icon
-                  dark
-                  right
-                >
-                  mdi-plus
-                </v-icon>
-                REGISTER
-              </v-btn>
-            </v-sheet>
-          </div>
+<!--              rounded-->
+<!--              shaped-->
+<!--            >-->
+<!--              Dont have an account? Click on register to create one-->
+<!--              <v-btn-->
+<!--                class="mr-4"-->
+<!--                color="success"-->
+<!--                text-->
+<!--                type="submit"-->
+<!--                x-large-->
+<!--                @click="registerMe"-->
+<!--              >-->
+<!--                <v-icon-->
+<!--                  dark-->
+<!--                  right-->
+<!--                >-->
+<!--                  mdi-plus-->
+<!--                </v-icon>-->
+<!--                REGISTER-->
+<!--              </v-btn>-->
+<!--            </v-sheet>-->
+<!--          </div>-->
 
         </v-col>
 
 
       </v-row>
-    </div>
+
   </v-container>
 </template>
 
 <script>
-import error from "@/layouts/error";
+
 import {mapGetters} from 'vuex';
 import {ValidationObserver} from 'vee-validate';
 import {ValidationProvider} from 'vee-validate';
