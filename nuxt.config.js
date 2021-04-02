@@ -54,7 +54,7 @@ server:{
     broadcaster: 'pusher',
     authModule: true,
     connectOnLogin: true,
-    authEndpoint: process.env.VUE_APP_API_URL+'/api/broadcasting/auth',
+    authEndpoint:'https://dala.melosolutions.tech/api/broadcasting/auth',
     key: process.env.PUSHER_APP_KEY,
     wsHost: process.env.VUE_APP_WEBSOCKET_SERVER ,
     wsPort: 6001,
