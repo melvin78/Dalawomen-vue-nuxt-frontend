@@ -56,7 +56,7 @@ server:{
     connectOnLogin: true,
     authEndpoint: process.env.VUE_APP_API_URL+'/api/broadcasting/auth',
     key: process.env.PUSHER_APP_KEY,
-    wsHost: process.env.VUE_APP_WEBSOCKET_SERVER,
+    wsHost: process.env.VUE_APP_WEBSOCKET_SERVER ,
     wsPort: 6001,
     wssPort: 6001,
     enabledTransports: ['ws', 'wss'],
@@ -68,7 +68,7 @@ server:{
 
   axios: {
 
-    baseURL: process.env.VUE_APP_API_URL,
+    baseURL: 'https://dala.melosolutions.tech',
     credentials: true,
   },
   router: {
