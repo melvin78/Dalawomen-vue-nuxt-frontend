@@ -112,7 +112,7 @@ http:{
     strategies: {
       laravelSanctum: {
         provider: 'laravel/sanctum',
-        url: process.env.VUE_APP_API_URL
+        url: 'https://dala.melosolutions.tech'
       },
     },
 
