@@ -67,7 +67,7 @@ server:{
   },
 
   axios: {
-   baseURL:'https://dala.melosolutions.tech',
+   baseURL:process.env.VUE_APP_API_URL,
     credentials: true,
   },
   router: {
