@@ -1,12 +1,13 @@
 <template>
-  <div>
-   <v-overlay :value="valueOver">
+  <div class="text-center">
+    <v-overlay :value="valueOver">
+
 
       <v-progress-circular
-        :width="30"
-        color="green"
         indeterminate
+        color="primary"
       ></v-progress-circular>
+     {{info}}
 
     </v-overlay>
   </div>
@@ -14,17 +15,13 @@
 
 <script>
 export default {
-  name: "loading-overlay",
-  props:['valueOver'],
-
-
-
-
+  name: "loading-overlay-form",
+  props: {
+    valueOver: Boolean,
+    info:String,
 
 }
-
-
-
+}
 </script>
 
 <style scoped>

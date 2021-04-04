@@ -31,7 +31,6 @@
 <script>
 import Logo from '~/components/Logo.vue'
 import VuetifyLogo from '~/components/VuetifyLogo.vue'
-import normal from "@/layouts/normal";
 import HomeSection from "@/components/landingpage/HomeSection";
 import AboutSection from "@/components/landingpage/AboutSection";
 import ContactSection from "@/components/landingpage/ContactSection";
@@ -102,14 +101,10 @@ export default {
   },
 
 
+
 }
 </script>
 <style scoped>
-.v-main {
-  /*background-image: url("/img/bgMain.png");*/
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-}
+
 
 </style>

@@ -54,7 +54,7 @@ server:{
     broadcaster: 'pusher',
     authModule: true,
     connectOnLogin: true,
-    authEndpoint: process.env.VUE_APP_API_URL+'/api/broadcasting/auth',
+    authEndpoint: 'https://dala.melosolutions.tech/api/broadcasting/auth',
     key: process.env.PUSHER_APP_KEY,
     wsHost: process.env.VUE_APP_WEBSOCKET_SERVER ,
     wsPort: 6001,
@@ -74,14 +74,11 @@ server:{
     middleware: ['auth']
   },
 
-http:{
-  baseURL: process.env.VUE_APP_API_URL,
-},
-  // Modules: https://go.nuxtjs.dev/config-modules
+
   modules: ['@nuxtjs/axios', '@nuxtjs/auth-next'],
 
 
-  // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
+
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {

@@ -268,9 +268,9 @@ export default {
 
 
    chatHeader(value,value_id){
-      this.chattingWith(value)
-     this.chattingWithid(value_id)
 
+     this.$auth.$storage.setLocalStorage('chatHeadid',value_id); //persist to local storage evne after refresh
+     this.$auth.$storage.setLocalStorage('chatHead',value);
      this.$router.push('/chat')
    },
     nextPage () {

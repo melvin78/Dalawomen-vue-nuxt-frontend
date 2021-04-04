@@ -63,6 +63,7 @@ shaped
 import {mapGetters} from "vuex";
 import {mapActions} from "vuex";
 
+
 export default {
   name: "dashboard",
   props:['isVisible','notificationType'],

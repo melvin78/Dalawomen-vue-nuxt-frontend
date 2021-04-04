@@ -224,8 +224,11 @@
 
     </v-app-bar>
     <v-main>
+
       <v-container>
+
         <nuxt/>
+
       </v-container>
     </v-main>
 
@@ -261,8 +264,9 @@ import {mapActions} from "vuex";
 import {mapGetters} from "vuex";
 
 
+
 export default {
-  components: {NotificationMenuPopup},
+  components: { NotificationMenuPopup},
   data() {
     return {
       clipped: false,
@@ -372,17 +376,7 @@ export default {
     if (this.$auth.user.role.indexOf('Treasurer') > 0) {
       this.items.forEach(p => p.show = true);
     }
-    // this.$echo.private(`message-notification.${this.$auth.user.id}`)
-    //   .listen('.Chat', (e) => {
-    //
-    //     const chat = {
-    //       message: e.message,
-    //       sent: e.sendername,
-    //
-    //     }
-    //
-    //   console.log(e)
-    //   });
+
 
 
     this.$echo.private(`chat-channel.${this.$auth.user.id}`)
@@ -391,8 +385,8 @@ export default {
         const chat = {
           from: e.from,
         }
-console.log(e)
-        console.log(chat)
+
+
         this.sendNewmessagenotification(chat)
         this.messageNotification=this.recentMessages
 

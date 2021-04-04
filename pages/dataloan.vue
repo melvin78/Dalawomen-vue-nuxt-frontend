@@ -32,7 +32,17 @@
       </v-expansion-panels>
 
     </v-row>
+<v-row>
+  <div>
+  <snackbar-dataloan
+    :my-value="snackbarDataloan"
+    :membername="propMembername"
+    :refno="propRefno"
+  ></snackbar-dataloan>
 
+
+  </div>
+</v-row>
     <v-data-iterator
       :items="items"
       :items-per-page.sync="itemsPerPage"
@@ -183,11 +193,7 @@
       </template>
     </v-data-iterator>
 
-    <snackbar-dataloan
-    :my-value="snackbarDataloan"
-    :membername="propMembername"
-    :refno="propRefno"
-    ></snackbar-dataloan>
+
 
     <loading-overlay :value-over="overlay"></loading-overlay>
 <submitted-overlay
@@ -208,8 +214,9 @@ import TextfieldChip from "@/components/textfield-chip";
 import SnackbarDataloan from "@/components/snackbar-dataloan";
 import SubmittedOverlay from "@/components/submitted-overlay";
 
+
 export default {
-  components: {SubmittedOverlay, SnackbarDataloan, TextfieldChip},
+  components: { SubmittedOverlay, SnackbarDataloan, TextfieldChip},
   middleware:'rolecheck',
   data() {
     return {
