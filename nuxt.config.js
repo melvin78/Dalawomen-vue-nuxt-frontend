@@ -14,8 +14,8 @@ server:{
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - MeloSolution',
-    title: 'Melosolution',
+    titleTemplate: '%s MeloSolutions',
+    title: '',
     htmlAttrs: {
       lang: 'en'
     },
@@ -25,7 +25,7 @@ server:{
       {hid: 'description', name: 'description', content: ''}
     ],
     link: [
-      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
+      {rel: 'icon', type: 'image/x-icon', href:'/img/icon.svg'},
       {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Crete+Round&display=swap'}
     ]
   },
@@ -54,7 +54,7 @@ server:{
     broadcaster: 'pusher',
     authModule: true,
     connectOnLogin: true,
-    authEndpoint: process.env.VUE_APP_API_URL+'/api/broadcasting/auth',
+    authEndpoint: 'https://dala.melosolutions.tech/api/broadcasting/auth',
     key: process.env.PUSHER_APP_KEY,
     wsHost: process.env.VUE_APP_WEBSOCKET_SERVER ,
     wsPort: 6001,
@@ -74,14 +74,11 @@ server:{
     middleware: ['auth']
   },
 
-http:{
-  baseURL: process.env.VUE_APP_API_URL,
-},
-  // Modules: https://go.nuxtjs.dev/config-modules
+
+
   modules: ['@nuxtjs/axios', '@nuxtjs/auth-next'],
 
 
-  // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
@@ -101,7 +98,6 @@ http:{
     }
   },
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: ["vee-validate/dist/rules"],
 

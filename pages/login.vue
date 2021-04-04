@@ -19,14 +19,14 @@
 
             <validation-observer ref="loginform" v-slot="{ handleSubmit}">
               <form @submit="handleSubmit(login)">
-                <ValidationProvider v-slot="{ errors }" name="email" rules="required" vid="email">
+                <ValidationProvider v-slot="{ errors }" name="email" rules="required|email" vid="email">
                   <v-text-field
                     v-model="email"
                     :error-messages="errors"
                     class="mr-4 ml-4 pt-8"
                     dense
-                    label="Name"
-                    name="name"
+                    label="Email"
+                    name="email"
                     outlined
                     required
                   ></v-text-field>
@@ -71,6 +71,7 @@
             <v-btn x-large @click="registerMe"> REGISTER</v-btn>
           </div>
         </v-col>
+        <loading-overlay-form :info="regisrationStatus" :value-over="overlay"></loading-overlay-form>
       </v-row>
     </div>
   </v-container>
@@ -83,20 +84,23 @@
 import {mapGetters} from 'vuex';
 import {ValidationObserver} from 'vee-validate';
 import {ValidationProvider} from 'vee-validate';
+import LoadingOverlayForm from "@/components/landingpage/loading-overlay-form";
 
 
 export default {
   name: "login",
   layout: 'normal',
   auth: false,
-  components: {ValidationObserver, ValidationProvider},
+  components: {LoadingOverlayForm, ValidationObserver, ValidationProvider},
 
 
   data() {
     return {
 
       password: '',
-      email: ''
+      email: '',
+      regisrationStatus:'',
+      overlay:false,
 
     }
   },
@@ -113,12 +117,15 @@ export default {
         email: this.email,
 
       }
-
+      this.overlay = true;
+      this.regisrationStatus='Logging you in...'
       this.$auth.loginWith('laravelSanctum', {data: payload})
         .then(() => {
+          this.overlay=false
           this.$router.push('/dashboard')
         })
         .catch(() => {
+          this.overlay=false
           this.$refs.loginform.setErrors(this.FormError.errors);
         })
 

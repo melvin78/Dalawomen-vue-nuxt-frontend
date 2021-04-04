@@ -10,12 +10,14 @@
         >
           <v-card elevation="13"
                   shaped>
-            <v-card-title>Fill in the form to register</v-card-title>
-          <v-card-subtitle>You will be assigned the role of a member by default. If you wish to test
-          the admin features,login with the following credentials:<br>
-            <strong>Email: Miles95@example.org</strong><br>
-            <strong>Password: password</strong><br>
-          </v-card-subtitle>
+            <v-card-title>Fill in the form to register.Check your email </v-card-title>
+            <v-card-subtitle>You will be assigned the role of a member by default. If you wish to test
+              the admin features,login with the following credentials:<br>
+              <strong>Email: Miles95@example.org</strong><br>
+              <strong>Password: password</strong><br>
+              <br>
+              You will receive an email after successful registration
+            </v-card-subtitle>
 
             <validation-observer ref="registerform" v-slot="{ handleSubmit }">
               <form @submit="handleSubmit(submitform)">
@@ -96,6 +98,9 @@
 
           </v-card>
         </v-col>
+
+
+        <loading-overlay-form :info="regisrationStatus" :value-over="overlay"></loading-overlay-form>
       </v-row>
     </div>
   </v-container>
@@ -103,17 +108,19 @@
 </template>
 
 <script>
-import error from "@/layouts/error";
+
 import {ValidationObserver} from 'vee-validate';
 import {ValidationProvider} from 'vee-validate';
 import {mapGetters} from "vuex";
+import LoadingOverlay from "@/components/loading-overlay";
+import LoadingOverlayForm from "@/components/landingpage/loading-overlay-form";
 
 
 export default {
   name: "register",
   layout: 'normal',
   auth: false,
-  components: {ValidationObserver, ValidationProvider},
+  components: {LoadingOverlayForm, LoadingOverlay, ValidationObserver, ValidationProvider},
   computed: {
     ...mapGetters({
       FormError: 'errorhandler/getError'
@@ -125,6 +132,8 @@ export default {
       email: '',
       password: '',
       password_confirmation: '',
+      overlay: false,
+      regisrationStatus: '',
 
     }
   },
@@ -142,17 +151,20 @@ export default {
       };
 
       await this.$axios.get('/sanctum/csrf-cookie')
-      this.$axios.post('/register', payload).then( ()=> {
+      this.overlay = true;
+      this.regisrationStatus = 'Confirming Your details...'
+      this.$axios.post('/register', payload).then(() => {
+        this.overlay = false;
         this.$router.push('/login')
 
-      }).catch(()=>{
+      }).catch(() => {
+        this.overlay = false;
         this.$refs.registerform.setErrors(this.FormError.errors)
       })
 
 
     }
   },
-
 
 
 }
