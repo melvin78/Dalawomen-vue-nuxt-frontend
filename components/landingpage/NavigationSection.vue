@@ -10,11 +10,11 @@
       <v-list>
         <v-list-item>
           <v-list-item-avatar>
-            <img src="/img/logo.png" alt="Logo" />
+            <v-img src="/img/icon.svg" max-width="200px" max-height="200px"></v-img>
           </v-list-item-avatar>
           <v-list-item-content>
-            <v-list-item-title class="title">Calango</v-list-item-title>
-            <v-list-item-subtitle>WEB</v-list-item-subtitle>
+            <v-list-item-title class="title"></v-list-item-title>
+            <v-list-item-subtitle></v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -47,7 +47,7 @@
       :class="{ expand: flat }"
     >
       <v-toolbar-title>
-        <v-img src="/img/logo.png" max-width="50px" />
+        <v-img src="/img/icon.svg" max-height="200px" max-width="200px"/>
       </v-toolbar-title>
       <v-spacer />
       <v-app-bar-nav-icon
