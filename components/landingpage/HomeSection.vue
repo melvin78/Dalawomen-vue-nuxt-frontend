@@ -145,7 +145,7 @@ export default {
         {
           img: require("@/assets/img/laravel-vue.png"),
           title: "Chama Management System",
-          text: "A fintech system that handles daily transactions that occur in chamas and SACCOS. Built with laravel framework and Vue.js. ",
+          text: "A fintech system that handles daily transactions that occur in chamas and SACCOS. Built with laravel framework and Vue.js ",
           to: "/dalapage"
 
 
