@@ -5,7 +5,7 @@
     <v-main class="pt-0">
     <home-section/>
 
-    <download-section/>
+<download-section/>
 
     <contact-section/>
     </v-main>
