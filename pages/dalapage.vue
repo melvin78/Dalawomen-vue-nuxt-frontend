@@ -4,7 +4,7 @@
 
   <h1> CHAMA MANAGEMENT SYSTEM</h1>
 
-   <p>The system has a laravel backend that acts as an aoi and serves a vue frontend on top of Nuxt js. Laravel
+   <p>The term chama is the swahili word for a SACCO or union.More info on what a chama is can be found <a href="https://en.wikipedia.org/wiki/Chama_(investment)">here</a>.The system has a laravel backend that acts as an aoi and serves a vue frontend on top of Nuxt js. Laravel
      websockets has also been used for the chats and notifications feature. Mailgun service for sending and receiving emails.
 
    </p>
