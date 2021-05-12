@@ -42,18 +42,12 @@ export default {
         text: "mdi-facebook",
         link: "",
       },
-      {
-        text: "mdi-twitter",
-        link: "",
-      },
+
       {
         text: "mdi-linkedin",
-        link: "",
+        link: "https://www.linkedin.com/in/melvin-ochieng-7a08b811b",
       },
-      {
-        text: "mdi-instagram",
-        link: "",
-      },
+
     ],
   }),
 };
