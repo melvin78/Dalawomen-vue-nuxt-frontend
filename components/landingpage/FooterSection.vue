@@ -39,21 +39,13 @@ export default {
   data: () => ({
     icons: [
       {
-        text: "mdi-facebook",
-        link: "",
-      },
-      {
-        text: "mdi-twitter",
-        link: "",
+        text: "mdi-github",
+        link: "https://github.com/melvin78",
       },
       {
         text: "mdi-linkedin",
-        link: "",
-      },
-      {
-        text: "mdi-instagram",
-        link: "",
-      },
+        link: "https://www.linkedin.com/in/melvin-ochieng-7a08b811b",
+      }
     ],
   }),
 };
