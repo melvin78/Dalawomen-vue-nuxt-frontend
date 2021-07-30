@@ -19,7 +19,9 @@
     "core-js": "^3.8.2",
     "nuxt": "^2.14.12",
     "patch-package": "^6.4.7",
+    "three": "^0.130.1",
     "vee-validate": "^3.4.5",
+    "vue-typer": "^1.2.0",
     "vuetify-material-dashboard": "^2.1.0"
   },
   "devDependencies": {

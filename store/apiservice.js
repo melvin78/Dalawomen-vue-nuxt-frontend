@@ -148,7 +148,7 @@ export const actions = {
 
 
     await this.$postRepository.notifications.all().then((res) => {
-      commit('SET_NOTIFICATIONS', res.data)
+      commit('SET_NOTIFICATIONS', res.target)
     })
   },
 

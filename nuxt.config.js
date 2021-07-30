@@ -38,6 +38,7 @@ server:{
     '~plugins/apiservice.js',
     '~plugins/vee-validate.js',
     '~plugins/vuetify.js',
+    { src: '~/plugins/vuetyper.js', mode: 'client' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

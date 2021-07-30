@@ -7,11 +7,40 @@
           <v-row align="center" justify="center">
             <v-col cols="12" md="6" xl="8">
 <!--              <h1 class="display-2 font-weight-bold mb-4">Melosolutions Tech</h1>-->
-              <h1 class="font-weight-light">
-                Melvin's <br/>
-                portfolio website<br/>
-                browse to see some of my projects!
-              </h1>
+
+<!--                Melvin's <br/>-->
+<!--                portfolio website<br/>-->
+<!--                browse to see some of my projects!-->
+              <div class="mb-4">
+                <v-card
+                color="rgb(23, 27, 52,0.6)"
+                >
+                  <v-card-text>
+                <vue-typer
+                  :text='["Hello there! Melvin Here This is my portfolio Website Browse to see some of my projects"]'
+                  :repeat='0'
+                  :shuffle='false'
+                  initial-action='typing'
+                  :pre-type-delay='80'
+                  :type-delay='80'
+                  erase-style='clear'
+                  :pre-erase-delay='70'
+                  :erase-delay='70'
+                  :erase-on-complete='false'
+                  caret-animation='blink'
+                ></vue-typer>
+                  </v-card-text>
+                </v-card>
+
+
+              </div>
+
+
+
+
+
+
+
               <v-btn
                 class="mt-5"
                 dark
@@ -170,7 +199,11 @@ export default {
       }
     },
   },
-  methods: {},
+  methods: {
+    showNext(){
+
+    }
+  },
 };
 </script>
 
@@ -249,7 +282,14 @@ export default {
   transform-box: fill-box;
 
 }
+.vue-typer {
+  font-size: 18pt;
 
+}
+
+.vue-typer .custom.char.typed {
+  color: #f4f7f5;
+}
 
 @keyframes rotation {
 
